@@ -1,0 +1,114 @@
+!DOCTYPE html>  
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Web - EP 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="site-wraper">
+  </div>
+
+  <header class="site-header">
+    <div class="brand">
+      <h1>Belajar Web</h1>
+      <p class="tasgline">Dari nol jadi pro</p>
+    </div>
+
+   
+    <button id="menu-toggle" class="menu-toggle" aria-controls="primary-nav" aria-expanded="false">
+      ☰ Menu
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Artikel</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <div class="content-area">
+      <article class="post">
+        <header class="post-header">
+          <h2>Kenapa Harus HTML Semantik?</h2>
+          <p class="meta">oleh Elvira Ayudhia - 25 November 2025</p>
+        </header>
+
+        <p>HTML semantik bikin kode kamu lebih mudah dibaca dan ramah mesin pencari.</p>
+
+        <figure class="post-figure">
+          <img src="foto.jpg" alt="Foto Profil Elvira Ayudhia" width="200" height="200">
+          <figcaption>Struktur semantik yang jelas memudahkan semuanya.</figcaption>
+        </figure>
+
+        <footer class="post-footer">
+          <p>&copy; 2025 Belajar Web</p>
+        </footer>
+      </article>
+
+      <article class="post">
+        <header class="post-header">
+          <h2>Artikel tentang Flexbox dan CSS Grid</h2>
+          <p class="meta">oleh Elvira Ayudhia - 25 November 2025</p>
+        </header>
+
+        <p>Artikel ini menjelaskan tentang struktur Flexbox dan CSS Grid serta kapan menggunakan masing-masing.</p>
+      </article>
+
+
+      <section class="gallery" aria-labelledby="gallery-title">
+        <h2 id="gallery-title">Galeri Proyek</h2>
+        <div class="grid-container">
+          <div class="item">Gambar 1</div>
+          <div class="item">Gambar 2</div>
+          <div class="item">Gambar 3</div>
+          <div class="item">Gambar 4</div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="sidebar" aria-labelledby="aside-title">
+      <h3 id="aside-title">Artikel lain</h3>
+      <ul>
+        <li><a href="#">Cara pakai Flexbox</a></li>
+        <li><a href="#">Mengenal CSS</a></li>
+      </ul>
+
+      <section class="skills" aria-labelledby="skills-title">
+        <h4 id="skills-title">Keahlian (Proses Belajar)</h4>
+        <div class="skill-grid">
+          <div class="skill">Canva (Lagi Improve)</div>
+          <div class="skill">Editing Video Dasar</div>
+          <div class="skill">Desain Konten Edukasi</div>
+          <div class="skill">HTML & CSS Basic</div>
+          <div class="skill">UI/UX: Beginner</div>
+          <div class="skill">Cepat Belajar & Adaptif</div>
+        </div>
+        <p class="skill-desc">Saya sedang meningkatkan skill desain & pembuatan konten menggunakan Canva dan belajar dasar web (HTML/CSS) agar bisa membuat media pembelajaran interaktif.</p>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Belajar Web | Elvira Ayudhia - Bone</p>
+  </footer>
+
+<script>
+
+  const btn = document.getElementById('menu-toggle');
+  const nav = document.getElementById('primary-nav');
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>
